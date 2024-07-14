@@ -1,6 +1,12 @@
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
   return (
     <nav id="navbar">
       <div id="search-bar">
@@ -9,7 +15,8 @@ const Navbar: React.FC = () => {
       </div>
       <div id="logo">T-Learning</div>
       <div id="navigation">
-        <button>Home</button>
+        <button onClick={() => handleNavigation('/')}
+           className="px-4 py-2 text-sm font-medium text-white rounded transition-all duration-500 hover:bg-[#FFEBCD]">Home</button>
         <button>Sign In</button>
         <button id="signup-btn">Sign Up</button>
       </div>
