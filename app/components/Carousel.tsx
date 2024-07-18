@@ -1,4 +1,3 @@
-// app/components/Carousel.tsx
 "use client";
 
 import React from 'react';
@@ -12,8 +11,8 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ courses }) => {
   const router = useRouter();
 
-  const handleFlagClick = (language: string) => {
-    router.push(`/language/${language.toLowerCase()}`);
+  const handleFlagClick = (id: number) => {
+    router.push(`/courses/${id}`);
   };
 
   return (
@@ -24,14 +23,14 @@ const Carousel: React.FC<CarouselProps> = ({ courses }) => {
           <div
             key={course.id}
             className="carousel-item flex-shrink-0 w-1/5 bg-transparent p-4 rounded-lg text-center text-white cursor-pointer"
-            onClick={() => handleFlagClick(course.title)}
+            onClick={() => handleFlagClick(course.id)}
           >
             <img
-              src={course.image}
-              alt={course.title}
+              src={course.imgUrl}
+              alt={course.course}
               className="w-full rounded-lg transition-transform duration-500 transform hover:scale-110"
             />
-            <h3 className="text-2xl font-bold mb-4">{course.title}</h3>
+            <h3 className="text-2xl font-bold mb-4">{course.course}</h3>
             <p className="text-lg">{course.description}</p>
           </div>
         ))}

@@ -4,7 +4,7 @@
 
 body {
   @apply font-sans min-h-screen;
-  background: linear-gradient(to bottom, #000000, #8B0000);
+  background: linear-gradient(to bottom, #000000, #8b0000);
 }
 
 a {
@@ -69,12 +69,6 @@ a {
   @apply max-w-2xl text-xl font-medium text-[#EBCDD2];
 }
 
-.get-started-button {
-  @apply bg-[#8B0000] rounded-lg text-white font-medium shadow-lg transition-all duration-200 hover:shadow-none transform hover:translate-y-1 cursor-pointer z-10;
-  padding: 0.5rem 1rem;
-  width: 25%;
-}
-
 #hero img {
   @apply absolute top-1/4 right-0 h-4/5 z-0;
 }
@@ -106,6 +100,7 @@ a {
 
 .carousel-item img {
   @apply w-full rounded-lg transition-transform duration-500 transform hover:scale-110;
+  aspect-ratio: 5/3;
 }
 
 .carousel-item h3 {
@@ -164,38 +159,6 @@ a {
   @apply text-gray-500;
 }
 
-#payment-plans {
-  @apply p-8 bg-black text-center;
-}
-
-#payment-plans h2 {
-  @apply text-3xl font-bold text-white mb-8;
-}
-
-.plans-container {
-  @apply flex flex-wrap justify-center gap-8;
-}
-
-.plan {
-  @apply bg-[#333333] text-white p-6 rounded-lg text-center w-52;
-}
-
-.plan h3 {
-  @apply text-2xl font-bold mb-4;
-}
-
-.plan p {
-  @apply font-bold mb-2;
-}
-
-.plan ul {
-  @apply list-inside mb-4;
-}
-
-.plan button {
-  @apply px-4 py-2 bg-[#8B0000] rounded hover:bg-[#EBCDD2] transition-all duration-300 cursor-pointer;
-}
-
 footer {
   @apply bg-black text-white text-center p-4;
 }
@@ -226,11 +189,49 @@ footer {
     @apply min-w-[80%] max-w-[80%];
   }
 
-  .plans-container {
-    @apply flex-col items-center;
-  }
-
   .tutors-carousel {
     @apply flex-col items-center;
   }
+}
+
+.course-page {
+  @apply min-h-screen p-8 bg-gradient-to-b from-black to-[#8B0000] text-white;
+}
+
+.course-title {
+  @apply text-4xl font-bold mb-6 text-center;
+}
+
+.course-description {
+  @apply text-2xl mb-4 text-center;
+}
+
+.course-section-title {
+  @apply text-3xl font-semibold mb-4;
+}
+
+.course-list {
+  @apply list-disc list-inside mb-6;
+}
+
+.course-list-item {
+  @apply mb-2;
+}
+
+.course-card {
+  @apply bg-black rounded-lg shadow-lg p-6 mb-6 text-white transform transition-transform duration-300 hover:scale-105;
+  max-width: 400px;
+  -ms-grid-column-align: center
+}
+
+.course-card-title {
+  @apply text-2xl font-bold mb-4;
+}
+
+.course-card-description {
+  @apply text-lg mb-4;
+}
+
+.loading-text {
+  @apply text-center text-xl;
 }

@@ -8,7 +8,7 @@ interface TutorsProps {
 const Tutors: React.FC<TutorsProps> = ({ tutors }) => {
   return (
     <section id="tutors">
-      <h2>Meet Our Founders</h2>
+      <h2>Notable Alumni</h2>
       <div className="tutors-carousel">
         {tutors.map((tutor) => (
           <div key={tutor.id} className="tutor-item">

@@ -1,9 +1,18 @@
 export type Course = {
   id: number;
-  title: string;
+  course: string;
   description: string;
-  image: string;
+  imgUrl: string;
+  totalTopics: number;
+  topics: Topic[];
+  lecturers: string[];
 };
+
+export type Topic = {
+  topicId: number;
+  name: string;
+  content: string;
+}
 
 export type PaymentPlan = {
   id: number;
@@ -21,17 +30,22 @@ export type Tutor = {
 };
 
 export async function getCourseData(): Promise<Course[]> {
-  return [
-    { id: 1, title: 'Korean', description: '한국어 학습 여정을 시작하세요', image: '/assets/flag-courses/korean-flag.jpg' },
-    { id: 2, title: 'Portuguese', description: 'Comece sua jornada aprendendo português', image: '/assets/flag-courses/portuguese-flag.jpg' },
-    { id: 3, title: 'English', description: 'Begin your journey in learning English', image: '/assets/flag-courses/english-flag.jpg' },
-    { id: 4, title: 'Japanese', description: '日本語学習の旅を始めましょう', image: '/assets/flag-courses/japanese-flag.jpg' },
-    { id: 5, title: 'Chinese', description: '开始你的汉语学习之旅', image: '/assets/flag-courses/chinese-flag.jpg' },
-    { id: 6, title: 'French', description: 'Commencez votre voyage en apprenant le français', image: '/assets/flag-courses/french-flag.jpg' },
-    { id: 7, title: 'Italian', description: "Inizia il tuo viaggio nell'apprendimento dell'italiano", image: '/assets/flag-courses/italian-flag.jpg' },
-    { id: 8, title: 'Indonesian', description: 'Mulailah perjalanan Anda dalam mempelajari Indonesia', image: '/assets/flag-courses/indonesian-flag.jpg' },
-  ];
+  const res = await fetch('https://sistech-server.vercel.app/api/data')
+  const data = await res.json();
+  return data.data;
 }
+// export async function getCourseData(): Promise<Course[]> {
+//   return [
+//     { id: 1, title: 'Korean', description: '한국어 학습 여정을 시작하세요', image: '/assets/flag-courses/korean-flag.jpg' },
+//     { id: 2, title: 'Portuguese', description: 'Comece sua jornada aprendendo português', image: '/assets/flag-courses/portuguese-flag.jpg' },
+//     { id: 3, title: 'English', description: 'Begin your journey in learning English', image: '/assets/flag-courses/english-flag.jpg' },
+//     { id: 4, title: 'Japanese', description: '日本語学習の旅を始めましょう', image: '/assets/flag-courses/japanese-flag.jpg' },
+//     { id: 5, title: 'Chinese', description: '开始你的汉语学习之旅', image: '/assets/flag-courses/chinese-flag.jpg' },
+//     { id: 6, title: 'French', description: 'Commencez votre voyage en apprenant le français', image: '/assets/flag-courses/french-flag.jpg' },
+//     { id: 7, title: 'Italian', description: "Inizia il tuo viaggio nell'apprendimento dell'italiano", image: '/assets/flag-courses/italian-flag.jpg' },
+//     { id: 8, title: 'Indonesian', description: 'Mulailah perjalanan Anda dalam mempelajari Indonesia', image: '/assets/flag-courses/indonesian-flag.jpg' },
+//   ];
+// }
 
 export async function getPaymentPlans(): Promise<PaymentPlan[]> {
   return [

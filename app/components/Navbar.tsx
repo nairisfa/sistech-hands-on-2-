@@ -17,8 +17,8 @@ const Navbar: React.FC = () => {
       <div id="navigation">
         <button onClick={() => handleNavigation('/')}
            className="px-4 py-2 text-sm font-medium text-white rounded transition-all duration-500 hover:bg-[#FFEBCD]">Home</button>
-        <button>Sign In</button>
-        <button id="signup-btn">Sign Up</button>
+        <button onClick={() => handleNavigation('/sign-in')} >Sign In</button>
+        <button onClick={() => handleNavigation('/sign-up')} id="signup-btn">Sign Up</button>
       </div>
     </nav>
   );
