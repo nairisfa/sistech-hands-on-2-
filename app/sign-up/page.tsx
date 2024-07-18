@@ -6,7 +6,7 @@ export default function Home() {
           <h1 className="hidden md:inline -mt-12 mb-10 self-start px-10 text-4xl font-bold text-red-500">T-Learning</h1>
           <div className="p-5 max-w-xl w-[90%] bg-white bg-opacity-25 md:bg-transparent md:shadow-none shadow-xl rounded px-8 pt-6 pb-8 mb-4">
             <h1 className="text-2xl font-bold">Welcome back!</h1>
-            <p>Welcome back to our</p>
+            <p>Welcome back to T-Learning</p>
             <form className="mt-5">
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2" htmlFor="username">
